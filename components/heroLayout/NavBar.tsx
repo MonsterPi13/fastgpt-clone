@@ -11,6 +11,8 @@ import {
 import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
 
+import CommunityModal from "../modals/CommunityModal";
+
 const NavBar = () => {
   const router = useRouter();
   const [scrollTop, setScrollTop] = useState(0);
@@ -120,6 +122,8 @@ const NavBar = () => {
           Start Now
         </Button>
       </Flex>
+
+      {isOpenCommunity && <CommunityModal onClose={onCloseCommunity} />}
     </Box>
   );
 };
